@@ -1,5 +1,7 @@
 import pandas as pd
 
+sep = '+'*80
+
 rep1 = [.6, .1, .1, .1, .1]
 bb1 = [.8, .05, .05, .05, .05]
 bbseq1 = [.9, .025, .025, .025, .025]
@@ -20,6 +22,16 @@ top = {
 }
 
 df = pd.DataFrame(top)
-df2 = pd.DataFrame(data=top, index=['rep','bb','bbseq'], columns=['site1', 'site2', 'site3'] )
+df2 = pd.DataFrame(data=top, index=['rep','bb','bbseq']) 
+df3 = pd.DataFrame(data=top, index=['rep','bb','bbseq'], columns=['site1', 'site2', 'site3'] )
 print(df.head())
 print(df2.head())
+print(df3.head())
+
+print(sep)
+print(df2[1].head())
+print(df2.axes)
+
+print(sep)
+print(df2[1]['bb'])
+#print(df2[:]['bb'])
