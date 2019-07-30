@@ -1,6 +1,5 @@
 import pandas as pd
 
-dict = {}
 rep1 = [.6, .1, .1, .1, .1]
 bb1 = [.8, .05, .05, .05, .05]
 bbseq1 = [.9, .025, .025, .025, .025]
@@ -20,4 +19,7 @@ top = {
     3:site3
 }
 
-print(top)
+df = pd.DataFrame(top)
+df2 = pd.DataFrame(data=top, index=['rep','bb','bbseq'], columns=['site1', 'site2', 'site3'] )
+print(df.head())
+print(df2.head())
