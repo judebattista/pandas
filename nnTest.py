@@ -21,9 +21,23 @@ top = {
     3:site3
 }
 
+top2 = {
+    'site1':site1,
+    'site2':site2,
+    'site3':site3
+}
+
+topArr = [x for x in range(10)]
+
+testDict = {
+    1:1,
+    2:2 
+}
+
 df = pd.DataFrame(top)
-df2 = pd.DataFrame(data=top, index=['rep','bb','bbseq']) 
-df3 = pd.DataFrame(data=top, index=['rep','bb','bbseq'], columns=['site1', 'site2', 'site3'] )
+df2 = pd.DataFrame(data=top, index=['rep','bb','bbseq'], copy=True) 
+df3 = pd.DataFrame(data=top2,index=['rep','bb','bbseq'], columns=['site3', 'site2', 'site1'])
+
 print(df.head())
 print(df2.head())
 print(df3.head())
